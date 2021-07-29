@@ -13,6 +13,7 @@ import os
 from datetime import timedelta
 from os import environ
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.conf import settings
@@ -189,3 +190,6 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = 'static/images'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+# Heroku Settings
+django_heroku.settings((locals()))
