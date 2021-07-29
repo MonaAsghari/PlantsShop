@@ -37,7 +37,7 @@ import {
 
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000';
+// axios.defaults.baseURL = 'http://127.0.0.1:8000';
 export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({

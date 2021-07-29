@@ -26,7 +26,7 @@ import {
 
 } from '../constants/productConstants'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000';
+// axios.defaults.baseURL = 'http://127.0.0.1:8000';
 export const listProducts = (keyword = '') => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST })

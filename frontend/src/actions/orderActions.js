@@ -30,7 +30,7 @@ import {
 
 import { CART_CLEAR_ITEMS } from '../constants/cartConstants'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000';
+// axios.defaults.baseURL = 'http://127.0.0.1:8000';
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
         dispatch({
