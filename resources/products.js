@@ -1,0 +1,81 @@
+products = [
+  {
+    '_id': '1',
+    'name': 'POTHOS PLANT',
+    'image': '/images/pothos-plant.png',
+    'description':
+      'The pothos plant – also known as Devil\'s Fern – is great for those with less surface space, with Lorainne explaining that "this leafy green flower is perfect for hanging baskets as it is a climbing plant.',
+    'native': 'Mo\'orea',
+    'category': 'Houseplants',
+    'price': 189.99,
+    'countInStock': 10,
+    'rating': 4.5,
+    'numReviews': 12,
+  },
+  {
+    '_id': '2',
+    'name': 'SANSEVIERIA',
+    'image': '/images/sansevieria.png',
+    'description':
+      'Not only can the snake plant survive with low light, it’s also extremely drought-tolerant—meaning even if you forget to water it, it won’t die. It gets its name thanks to the wavy, striped patterns (reminiscent of a snake) on its leaves.',
+    'native': 'Africa',
+    'category': 'Houseplants',
+    'price': 199.99,
+    'countInStock': 8,
+    'rating': 5,
+    'numReviews': 13,
+  },
+  {
+    '_id': '3',
+    'name': 'PILEA PEPEROMIOIDES',
+    'image': '/images/pilea.png',
+    'description':
+      'The Pilea plant or chinese money is a succulent that looks very particular. Pilea peperomioides is its scientific name and it is a plant that needs only one watering per week and indirect light.',
+    'native': 'Yunnan',
+    'category': 'Houseplants',
+    'price': 129.99,
+    'countInStock': 5,
+    'rating': 3,
+    'numReviews': 11,
+  },
+  {
+    '_id': '4',
+    'name': 'SPIDER PLANT',
+    'image': '/images/spider-plant.png',
+    'description':
+      'Well-suited to Hong Kong\'s climate, spider plants are a popular choice. This plant loves humidity. The spider plants are non-toxic to animals and grow well in low to bright sunlight.',
+    'native': 'Hong Kong',
+    'category': 'Houseplants',
+    'price': 299.99,
+    'countInStock': 11,
+    'rating': 5,
+    'numReviews': 15,
+  },
+  {
+    '_id': '5',
+    'name': 'ALOE VERA',
+    'image': '/images/aloevera.png',
+    'description':
+      'With indoor aloe vera, you’ll have instant medication on hand for scrapes and burns, plus a funky, spiky decor item for your kitchen or living room. Keep it near a window and water regularly, allowing the top two inches of soil to dry between waterings (which also means you can go on vacation and not come home to droopy aloe).',
+    'native': 'Arabian Peninsula',
+    'category': 'Houseplants',
+    'price': 49.99,
+    'countInStock': 7,
+    'rating': 3.5,
+    'numReviews': 10,
+  },
+  {
+    '_id': '6',
+    'name': 'MONSTERA',
+    'image': '/images/monstera.png',
+    'description':
+      'This standout plant–also known as the Swiss Cheese Plant–grows wild in Panama, and it belongs to the family of plants called araceae. In Latin, araceae translates to “abnormal.” Well, monstera’s leaves are certainly abnormal—but in the best possible way. Their massive, perforated leaves can grow up to two feet wide in a jungle environment.',
+    'native': 'Tropical forests of southern Mexico',
+    'category': 'Houseplants',
+    'price': 159.99,
+    'countInStock': 0,
+    'rating': 4,
+    'numReviews': 17,
+  },
+]
+
