@@ -204,5 +204,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 # Heroku Settings
 django_heroku.settings((locals()))
 
-if os.getcwd() == '/app':
-    DEBUG = False
+# if os.getcwd() == '/app':
+#     DEBUG = False
