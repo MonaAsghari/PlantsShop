@@ -10,6 +10,9 @@ from rest_framework import status
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    """
+        Inherit from JWT Token serializer for create access and refresh token
+    """
     def validate(self, attrs):
         data = super().validate(attrs)
 
@@ -21,11 +24,15 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
+    """
+        Inherit from MyTokenObtainPairSerializer to view get token with access and refresh token
+    """
     serializer_class = MyTokenObtainPairSerializer
 
 
 @api_view(['POST'])
 def registerUser(request):
+    # Register new user
     data = request.data
     try:
         user = User.objects.create(
@@ -45,6 +52,7 @@ def registerUser(request):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateUserProfile(request):
+    # Reset user account : when user update his profile info with new refresh token
     user = request.user
     serializer = UserSerializerWithToken(user, many=False)
 
@@ -64,6 +72,7 @@ def updateUserProfile(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getUserProfile(request):
+    # Get user profile
     user = request.user
     serializer = UserSerializer(user, many=False)
     return Response(serializer.data)
@@ -72,6 +81,7 @@ def getUserProfile(request):
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
 def getUsers(request):
+    # Get the list of users -> just by admin access
     users = User.objects.all()
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
@@ -80,6 +90,7 @@ def getUsers(request):
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
 def getUserById(request, pk):
+    # get the list of users by ID -> just by admin access
     user = User.objects.get(id=pk)
     serializer = UserSerializer(user, many=False)
     return Response(serializer.data)
@@ -88,6 +99,7 @@ def getUserById(request, pk):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateUser(request, pk):
+    # Edit User by ID
     user = User.objects.get(id=pk)
 
     data = request.data
@@ -107,6 +119,7 @@ def updateUser(request, pk):
 @api_view(['DELETE'])
 @permission_classes([IsAdminUser])
 def deleteUser(request, pk):
+    # Delete user by ID -> just by admin access
     userForDeletion = User.objects.get(id=pk)
     userForDeletion.delete()
     return Response('User was deleted')

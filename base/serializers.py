@@ -5,6 +5,9 @@ from .models import Product, Order, OrderItem, ShippingAddress, Review
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """
+        Use for user login -> by access token & refresh token
+    """
     name = serializers.SerializerMethodField(read_only=True)
     _id = serializers.SerializerMethodField(read_only=True)
     isAdmin = serializers.SerializerMethodField(read_only=True)
@@ -28,6 +31,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserSerializerWithToken(UserSerializer):
+    """
+        Use for new user register and user reset account -> by refresh token
+    """
     token = serializers.SerializerMethodField(read_only=True)
 
     class Meta:

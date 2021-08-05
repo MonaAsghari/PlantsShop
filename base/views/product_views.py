@@ -9,6 +9,7 @@ from rest_framework import status
 
 @api_view(['GET'])
 def getProducts(request):
+    # Get list of products
     query = request.query_params.get('keyword')
     if query == None:
         query = ''
@@ -22,8 +23,10 @@ def getProducts(request):
     try:
         products = paginator.page(page)
     except PageNotAnInteger:
+        # if query param was not integer return first page
         products = paginator.page(1)
     except EmptyPage:
+        # if query param was an empty page return last page
         products = paginator.page(paginator.num_pages)
 
     if page == None:
@@ -37,6 +40,7 @@ def getProducts(request):
 
 @api_view(['GET'])
 def getProduct(request, pk):
+    # Get product by IP
     product = Product.objects.get(_id=pk)
     serializer = ProductSerializer(product, many=False)
     return Response(serializer.data)
